@@ -21,7 +21,7 @@ public class AddressController {
 	@Autowired
 	private AddressServiceImpl addressImpl;
 
-	@PostMapping("/create-address")
+	@PostMapping("/save-address")
 	public CompletableFuture<ResponseEntity<AddressDto>> saveAddress(@RequestBody Address address) {
 		return CompletableFuture.supplyAsync(() -> {
 			AddressDto addressObj = this.addressImpl.createAddress(address);
